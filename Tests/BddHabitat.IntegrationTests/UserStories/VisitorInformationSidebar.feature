@@ -5,7 +5,7 @@
 Scenario: Preview duration of a visit on More Info page
     Given David opened the Home page
     And he clicked More Info item on the main navigation
-    And he read More Info page content for 2500 milliseconds
+    And he read More Info page content for 5500 milliseconds
     And he scrolled up the page
     And he clicked the logo
     And he opened the visitor information sidebar

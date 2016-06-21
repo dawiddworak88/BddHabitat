@@ -76,7 +76,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 7
     testRunner.And("he clicked More Info item on the main navigation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
-    testRunner.And("he read More Info page content for 2500 milliseconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("he read More Info page content for 5500 milliseconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
     testRunner.And("he scrolled up the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
