@@ -18,6 +18,6 @@
         /// <summary>
         /// The implicit timeout in seconds.
         /// </summary>
-        public static readonly int ImplicitTimeoutInSeconds = 2;
+        public static readonly int ImplicitTimeoutInSeconds = 3;
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Runtime.Remoting.Channels;
 using System.Threading;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace BddHabitat.IntegrationTests.Pages
 {
@@ -52,6 +54,7 @@ namespace BddHabitat.IntegrationTests.Pages
         /// </summary>
         public void OpenVisitorInformationSidebar()
         {
+            this._driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(Constants.ImplicitTimeoutInSeconds));
             this._sidebar.SidebarButton.Click();
         }
 
@@ -70,6 +73,10 @@ namespace BddHabitat.IntegrationTests.Pages
         public void ClickEngagementTabOnVisitorInformationSidebar()
         {
             this._sidebar.EngagementTab.Click();
+
+            var wait = new WebDriverWait(this._driver,
+                TimeSpan.FromSeconds(Constants.ImplicitTimeoutInSeconds));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.Id("visitsPanel")));
         }
     }
 }

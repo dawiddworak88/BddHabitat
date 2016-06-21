@@ -1,15 +1,13 @@
 ﻿using System;
+using System.Threading;
 using BddHabitat.IntegrationTests.Pages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.IE;
-using OpenQA.Selenium.PhantomJS;
+using OpenQA.Selenium.Firefox;
+using TechTalk.SpecFlow;
 
 namespace BddHabitat.IntegrationTests.StepDefinitions
 {
-    using TechTalk.SpecFlow;
-
     /// <summary>
     /// The step definitions.
     /// </summary>
@@ -31,12 +29,10 @@ namespace BddHabitat.IntegrationTests.StepDefinitions
         /// </summary>
         private MoreInfo _moreInfoPage;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="VisitorInformationSidebarSteps"/> class.
-        /// </summary>
-        public VisitorInformationSidebarSteps()
+        [BeforeScenario()]
+        public void SetUp()
         {
-            this._driver = new ChromeDriver("D:/");
+            this._driver = new FirefoxDriver();
             this._homePage = new Home(this._driver);
             this._moreInfoPage = new MoreInfo(this._driver);
 
@@ -110,7 +106,11 @@ namespace BddHabitat.IntegrationTests.StepDefinitions
 
             Int32.TryParse(durationOfMoreInfoListElement.Text, out duration);
             Assert.IsTrue(duration > 0);
+        }
 
+        [AfterScenario()]
+        public void TearDown()
+        {
             this._driver.Quit();
         }
     }
