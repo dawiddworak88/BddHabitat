@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 using BddHabitat.IntegrationTests.Pages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
@@ -32,10 +31,15 @@ namespace BddHabitat.IntegrationTests.StepDefinitions
         [BeforeScenario()]
         public void SetUp()
         {
+            // Initializes web driver and pages
             this._driver = new FirefoxDriver();
             this._homePage = new Home(this._driver);
             this._moreInfoPage = new MoreInfo(this._driver);
 
+            // Sets a bit longer page load timeout in case the application pool starts
+            this._driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(Constants.PageLoadTimeoutInSeconds));
+
+            // Maximizes the web driver window
             this._driver.Manage().Window.Maximize();
         }
 

@@ -54,7 +54,7 @@ namespace BddHabitat.IntegrationTests.Pages
         /// </summary>
         public void OpenVisitorInformationSidebar()
         {
-            this._driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(Constants.ImplicitTimeoutInSeconds));
+            this._driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(Constants.TimeoutInSeconds));
             this._sidebar.SidebarButton.Click();
         }
 
@@ -64,7 +64,7 @@ namespace BddHabitat.IntegrationTests.Pages
         public void ClickRefreshOnVisitorInformationSidebar()
         {
             this._sidebar.RefreshButton.Click();
-            Thread.Sleep(TimeSpan.FromSeconds(Constants.ImplicitTimeoutInSeconds));
+            Thread.Sleep(TimeSpan.FromSeconds(Constants.TimeoutInSeconds));
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace BddHabitat.IntegrationTests.Pages
             this._sidebar.EngagementTab.Click();
 
             var wait = new WebDriverWait(this._driver,
-                TimeSpan.FromSeconds(Constants.ImplicitTimeoutInSeconds));
+                TimeSpan.FromSeconds(Constants.TimeoutInSeconds));
             wait.Until(ExpectedConditions.ElementIsVisible(By.Id("visitsPanel")));
         }
     }

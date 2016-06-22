@@ -18,6 +18,11 @@
         /// <summary>
         /// The implicit timeout in seconds.
         /// </summary>
-        public static readonly int ImplicitTimeoutInSeconds = 3;
+        public static readonly int TimeoutInSeconds = 3;
+
+        /// <summary>
+        /// The page load timeout in seconds.
+        /// </summary>
+        public static readonly int PageLoadTimeoutInSeconds = 60;
     }
 }
