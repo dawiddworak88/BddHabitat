@@ -34,10 +34,10 @@ namespace BddHabitat.IntegrationTests.Pages
         /// <param name="timeToReadInMiliseconds">The time to read in miliseconds.</param>
         public void ReadContent(int timeToReadInMiliseconds)
         {
-            Thread.Sleep(timeToReadInMiliseconds);
-            
             IJavaScriptExecutor js = (IJavaScriptExecutor)this._driver;
             js.ExecuteScript("window.scrollTo(0, document.body.scrollHeight);");
+
+            Thread.Sleep(timeToReadInMiliseconds);
         }
 
         /// <summary>

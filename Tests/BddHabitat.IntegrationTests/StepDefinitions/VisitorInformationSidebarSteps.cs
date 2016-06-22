@@ -56,9 +56,9 @@ namespace BddHabitat.IntegrationTests.StepDefinitions
         }
 
         [Given(@"he read More Info page content for (.*) milliseconds")]
-        public void GivenHeReadMoreInfoPageContentForMilliseconds(int p0)
+        public void GivenHeReadMoreInfoPageContentForMilliseconds(int readingTime)
         {
-            this._homePage.ReadContent(p0);
+            this._homePage.ReadContent(readingTime);
         }
 
         [Given(@"he scrolled up the page")]
